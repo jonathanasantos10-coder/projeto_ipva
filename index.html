@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atividade - Cálculo de IPVA</title>
 </head>
+
 <body>
-    
+
+<div id="geral">
+
+    <h3> Cálculo de IPVA e Seguro</h3>
+
+    <p>Neste site, você poderá consultar os valores a pagar do seu veículo, incluíndo seguro e IPVa de forma simples e rápida.</p>
+
+</div>
+
+<div id="div-form">
+    <form id="form-pessoa">
+    <label for="marca">Marca do veículo </label>
+    <input type="text" name="marca" id="marca" required>
+
+    <label for="modelo"> Modelo do veículo </label>
+    <input type="text" name="modelo" id="modelo" required>
+
+    <label for="placa"> Placa do veículo </label>
+    <input type="text" name="placa" id="placa" required maxlength="7">
+
+    <label for="fabricacao"> Ano do veículo </label>
+    <input type="number" name="fabricacao" id="fabricacao" required>
+
+    <label for="valor"> Valor do veículo </label>
+    <input type="number" name="valor" id="valor" required>
+        <br>
+    <label for="combustivel"> Tipo de combustível usado </label>
+        <br>
+    <label>
+        Gasolina
+        <input type="radio" name="gasolina" id="gasolina" required> 
+    </label>
+        <br>
+    <label>
+        Etanol
+        <input type="radio" name="etanol" id="etanol" required> 
+    </label>
+        <br>
+    <label>
+        Biocombustíveis
+        <input type="radio" name="biocombustivel" id="biocombustivel" required> 
+    </label>
+        <br>
+    <label>
+        Híbridos
+        <input type="radio" name="hibrido" id="hibrido" required> 
+    </label>
+        <br>
+    <label>
+        Elétricos
+        <input type="radio" name="eletrico" id="eletrico" required> 
+    </label>
+    <br>
+    <button type="submit" name="submit" id="submit"> Calcular  </button> 
+    <button type="reset"> Limpar formulário </button>
+    </form>
+</div>
+
+
+
+
+
 </body>
 </html>
