@@ -40,3 +40,6 @@ veiculos.forEach((elem, i) => { //percorre cada elemento em veículos e faz com 
     divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}`
 }) // o + faz com que "outro divresult" seja exibido, evitando que o anterior seja apagado. 
 }
+
+export { veiculos }
+import { calculoIsencao } from "js/script_calculo.js"
