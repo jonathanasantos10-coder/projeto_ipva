@@ -1,3 +1,5 @@
+import { calculoIsencao } from "./script_calculo.js"
+
 const veiculos = [] // isto é um array zerado.
 
 // pegando elemetnos do dom
@@ -42,4 +44,3 @@ veiculos.forEach((elem, i) => { //percorre cada elemento em veículos e faz com 
 }
 
 export { veiculos }
-import { calculoIsencao } from "js/script_calculo.js"

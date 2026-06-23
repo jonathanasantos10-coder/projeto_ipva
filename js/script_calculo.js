@@ -1,4 +1,4 @@
-import { veiculos } from "js/script_veiculo.js";
+import { veiculos } from "./script_veiculo.js";
 
 let diferenca = ''
 const dataHoje = new Date()
@@ -9,4 +9,12 @@ const calculoIsencao = (objVeiculo) => {
 
     return diferenca
 }
-export {calculoIsencao}
+
+const ipva = (objVeiculo) => {
+    if(objVeiculo.combustivel == )
+}
+
+
+
+
+// export {calculoIsencao}
