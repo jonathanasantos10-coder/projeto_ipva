@@ -1,25 +1,17 @@
 import { veiculos } from "./script_veiculo.js";
 
-let diferenca = ''
+
 const dataHoje = new Date()
 
-const calculoIsencao = (objVeiculo) => {
-    const dataFabricacao = new Date(objVeiculo.fabricacao)
-    const diferenca = dataHoje - dataFabricacao 
-
-    return diferenca
-}
-
-// export diferenca
-
-/*const ipva = (objVeiculo) => {
-    
-}
-*/
 let valorIpva = ''
 const calculoIpva = (objVeiculo) => {
-    if((objVeiculo.combustivel) == "Gasolina") {
+    
+    if ( dataHoje - (objVeiculo.fabricacao) >= 20){
+    valorIpva = `isento pois seu veículo tem mais de 20 anos.`
+
+    }else if((objVeiculo.combustivel) == "Gasolina") {
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.20)}`
+
     }else if ((objVeiculo.combustivel) ==  "Etanol"){
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.15)}`
 
@@ -33,19 +25,20 @@ const calculoIpva = (objVeiculo) => {
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.02)}`
     
       return valorIpva
+    
     }
     console.log (valorIpva)
   
 
 
+let  seguro = '' 
+const calculoSeguro = (objVeiculo) => {
 
-export {calculoIpva}
+ seguro = `R$ ${parseFloat(objVeiculo.valor * 0.10)}`
 
-/* Taxas:
-	Gasolina: Valor veiculo * 0.20
-	Etanol: 0.15
-	Biocombustível: 0.10
-	Hibridos: 0.8
-	Eletrico: 0.2
-*/
-// export {calculoIsencao}
+return seguro
+}
+
+export { calculoSeguro }
+export { calculoIpva }
+

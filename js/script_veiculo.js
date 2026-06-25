@@ -1,4 +1,5 @@
 import { calculoIpva } from "./script_calculo.js"
+import { calculoSeguro } from "./script_calculo.js"
 
 const veiculos = [] // isto é um array zerado.
 
@@ -40,7 +41,7 @@ const addVeiculo = (objVeiculo) => {
 const listaVeiculos = () => { //isso aqui é  função de listar todos o veiculos cadastrados, ela exibe no no divresult.
 divResult.innerHTML= ''  // faz com que o divresult NÃO exiba o reultado anterior junto do resultado novo, "limpando" o resultado para exibir a nova lista.
 veiculos.forEach((elem, i) => { //percorre cada elemento em veículos e faz com que ele seja exibido conforme definido no divresult ali em baixo.
-    divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}, seu ipva a pagar é ${calculoIpva(elem)}`
+    divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}, O seu IPVA é ${calculoIpva(elem)}, o valor do seu seguro é ${calculoSeguro(elem)}`
 }) // o + faz com que "outro divresult" seja exibido, evitando que o anterior seja apagado. 
 }
 
