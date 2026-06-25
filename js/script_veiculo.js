@@ -13,7 +13,7 @@ evt.preventDefault() //aqui prevenimo o refresh da pagina ao clicar submit
 
 const dadosForm = new FormData(formVeiculo) //data form para as funções a seguir 
 
-const combustivelVeiculo = combustivel.value
+const combustivelVeiculo = combustivel.value // como eu usei select ao invés de radio ou type text, eu preciso fazer uma variável pra depois inserir no objeto (pelo menos eu acho que é assim né), e não prof, eu não usei ia nessa parte, só lá no date mesmo.
 
 const veiculo = { // o objeto literal e seus elemetntos
     marca: dadosForm.get('marca'),
@@ -41,7 +41,7 @@ const addVeiculo = (objVeiculo) => {
 const listaVeiculos = () => { //isso aqui é  função de listar todos o veiculos cadastrados, ela exibe no no divresult.
 divResult.innerHTML= ''  // faz com que o divresult NÃO exiba o reultado anterior junto do resultado novo, "limpando" o resultado para exibir a nova lista.
 veiculos.forEach((elem, i) => { //percorre cada elemento em veículos e faz com que ele seja exibido conforme definido no divresult ali em baixo.
-    divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}, O seu IPVA é ${calculoIpva(elem)}, o valor do seu seguro é ${calculoSeguro(elem)}`
+    divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}, O seu IPVA é ${calculoIpva(elem)}, o valor do seu seguro é ${calculoSeguro(elem)}` 
 }) // o + faz com que "outro divresult" seja exibido, evitando que o anterior seja apagado. 
 }
 
