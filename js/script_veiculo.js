@@ -1,4 +1,4 @@
-import { calculoIsencao } from "./script_calculo.js"
+import { calculoIpva } from "./script_calculo.js"
 
 const veiculos = [] // isto é um array zerado.
 
@@ -6,14 +6,15 @@ const veiculos = [] // isto é um array zerado.
 const formVeiculo = document.querySelector('#form-veiculo')
 const divResult = document.querySelector('#div-lista-veiculos')
 const combustivel = document.querySelector('#combustivel')
-formVeiculo.addEventListener('submit', (evt) => { // CAPTURANDO O ENVI
+
+formVeiculo.addEventListener('submit', (evt) => { // CAPTURANDO O ENVIo
 evt.preventDefault() //aqui prevenimo o refresh da pagina ao clicar submit
 
 const dadosForm = new FormData(formVeiculo) //data form para as funções a seguir 
 
 const combustivelVeiculo = combustivel.value
 
-const veiculo = { // gerando os elementos que serão inseridos no array
+const veiculo = { // o objeto literal e seus elemetntos
     marca: dadosForm.get('marca'),
     modelo: dadosForm.get('modelo'),
     placa: dadosForm.get('placa'),
@@ -29,7 +30,7 @@ addVeiculo(veiculo) //aqui eu chamo o push para cadastrar um veiculo no array
 formVeiculo.reset()
 })
 
-// dando push dos dados no array
+// dando push do veiculo no no array
 const addVeiculo = (objVeiculo) => {
     veiculos.push(objVeiculo) 
 
@@ -39,7 +40,7 @@ const addVeiculo = (objVeiculo) => {
 const listaVeiculos = () => { //isso aqui é  função de listar todos o veiculos cadastrados, ela exibe no no divresult.
 divResult.innerHTML= ''  // faz com que o divresult NÃO exiba o reultado anterior junto do resultado novo, "limpando" o resultado para exibir a nova lista.
 veiculos.forEach((elem, i) => { //percorre cada elemento em veículos e faz com que ele seja exibido conforme definido no divresult ali em baixo.
-    divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}`
+    divResult.innerHTML += `<div class='veiculo-novo'> ${i + 1} - ${elem.marca}, ${elem.modelo}, ${elem.placa}, ${elem.fabricacao},${elem.valor} ${elem.combustivel}, seu ipva a pagar é ${calculoIpva(elem)}`
 }) // o + faz com que "outro divresult" seja exibido, evitando que o anterior seja apagado. 
 }
 
