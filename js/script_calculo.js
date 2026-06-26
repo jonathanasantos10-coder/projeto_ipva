@@ -1,12 +1,9 @@
 import { veiculos } from "./script_veiculo.js";
 
-
-const dataHoje = new Date()
-
 let valorIpva = ''
 const calculoIpva = (objVeiculo) => {
 
-  if (dataHoje - (objVeiculo.fabricacao) >= 20) {
+  if ((objVeiculo.fabricacao) <= 2004) {
     valorIpva = `isento pois seu veículo tem mais de 20 anos.`
 
   } else if ((objVeiculo.combustivel) == "Gasolina") {
