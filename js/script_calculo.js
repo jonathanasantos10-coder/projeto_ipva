@@ -5,38 +5,38 @@ const dataHoje = new Date()
 
 let valorIpva = ''
 const calculoIpva = (objVeiculo) => {
-    
-    if ( dataHoje - (objVeiculo.fabricacao) >= 20){
+
+  if (dataHoje - (objVeiculo.fabricacao) >= 20) {
     valorIpva = `isento pois seu veículo tem mais de 20 anos.`
 
-    }else if((objVeiculo.combustivel) == "Gasolina") {
+  } else if ((objVeiculo.combustivel) == "Gasolina") {
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.20)}`
 
-    }else if ((objVeiculo.combustivel) ==  "Etanol"){
+  } else if ((objVeiculo.combustivel) == "Etanol") {
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.15)}`
 
-    }else if ((objVeiculo.combustivel) == "Biocombustível"){
+  } else if ((objVeiculo.combustivel) == "Biocombustível") {
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.10)}`
 
-    }else if ((objVeiculo.combustivel) == "Híbrido"){
+  } else if ((objVeiculo.combustivel) == "Híbrido") {
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.08)}`
 
-    }else //((objVeiculo.combustivel) == "Elétrico")
+  } else //((objVeiculo.combustivel) == "Elétrico")
     valorIpva = `R$ ${parseFloat(objVeiculo.valor * 0.02)}`
-    
-      return valorIpva
-    
-    }
-    console.log (valorIpva)
-  
+
+  return valorIpva
+
+}
+console.log(valorIpva)
 
 
-let  seguro = '' 
+
+let seguro = ''
 const calculoSeguro = (objVeiculo) => {
 
- seguro = `R$ ${parseFloat(objVeiculo.valor * 0.10)}`
+  seguro = `R$ ${parseFloat(objVeiculo.valor * 0.10)}`
 
-return seguro
+  return seguro
 }
 
 export { calculoSeguro }

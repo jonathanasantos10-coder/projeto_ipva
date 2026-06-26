@@ -5,57 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/script_veiculo.js" type="module" defer> </script>
-    <title>Atividade - Cálculo de IPVA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title> Atividade - Cálculo de IPVA</title>
 </head>
 
 <body>
 
-<div id="geral">
+    <div id="geral">
 
-    <h3> Cálculo de IPVA e Seguro</h3>
+        <h3> Cálculo de IPVA e Seguro</h3>
 
-    <p>Neste site, você poderá consultar os valores a pagar do seu veículo, incluíndo seguro e IPVa de forma simples e rápida.</p>
+        <p>Neste site, você poderá consultar os valores a pagar do seu veículo, incluíndo seguro e IPVa de forma simples
+            e rápida.</p>
 
-</div>
+    </div>
 
-<div id="div-form">
-    <form id="form-veiculo">
-    <label for="marca">Marca do veículo </label>
-    <input type="text" name="marca" id="marca" required>
+    <div id="div-form">
+        <form id="form-veiculo">
+            <label for="marca">Marca do veículo </label>
+            <input type="text" name="marca" id="marca" required>
 
-    <label for="modelo"> Modelo do veículo </label>
-    <input type="text" name="modelo" id="modelo" required>
+            <label for="modelo"> Modelo do veículo </label>
+            <input type="text" name="modelo" id="modelo" required>
 
-    <label for="placa"> Placa do veículo </label>
-    <input type="text" name="placa" id="placa" required minlength="7" maxlength="7" placeholder="Ex: BRA0S1L">
+            <label for="placa"> Placa do veículo </label>
+            <input type="text" name="placa" id="placa" required minlength="7" maxlength="7" placeholder="Ex: BRA0S1L">
 
-    <label for="fabricacao"> Ano do veículo </label>
-    <input type="text" maxlength="4" name="fabricacao" id="fabricacao" placeholder="Ex: 2004">
+            <label for="fabricacao"> Ano do veículo </label>
+            <input type="text" maxlength="4" name="fabricacao" id="fabricacao" placeholder="Ex: 2004">
 
-    <label for="valor"> Valor do veículo </label>
-    <input type="number" name="valor" id="valor" required>
-        <br>
+            <label for="valor"> Valor do veículo </label>
+            <input type="number" name="valor" id="valor" required placeholder="Não separe os números">
+        
+            <label for="combustivel"> Tipo de combustível usado </label>
+            <select id="combustivel">
+                <option> Gasolina </option>
+                <option> Etanol </option>
+                <option> Biocombustível </option>
+                <option> Híbrido </option>
+                <option> Elétrico </option>
+            </select>
 
-    <label for="combustivel"> Tipo de combustível usado </label>
-    <select id="combustivel">
-    <option> Gasolina </option>
-    <option> Etanol </option>
-    <option> Biocombustível  </option>
-    <option> Híbrido </option>
-    <option> Elétrico </option>
-    </select>
 
+            <button type="submit" name="submit" id="submit"> Calcular </button>
+            <button type="reset"> Limpar formulário </button>
+        </form>
+    </div>
 
-    <button type="submit" name="submit" id="submit"> Calcular  </button> 
-    <button type="reset"> Limpar formulário </button>
-    </form>
-</div>
+    <div id="div-lista-veiculos">
 
-<div id="div-lista-veiculos">
-
-</div>
+    </div>
 
 
 
 </body>
+
 </html>
